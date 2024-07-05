@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>投稿一覧</h1>
+      <% @posts.each do |post| %>
+        <div>
+          <%= image_tag post.get_image %>
+          <p>施設名:<%= post.title %></p>
+          <p>投稿者:<%= post.user.name %></p>
+          <p>コメント:<%= post.body %></p>
+        </div>
+        <%= link_to '詳細', post_path(post.id) %>
+      <% end %>
+     </div>
+  </div>
+</div>

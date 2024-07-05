@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  resources :users, only: [:edit, :show, :update] 
+   get 'users/:id/destroy', to: 'users#destroy', as: 'destroy_user'
+   delete 'users/:id/destroy', to: 'users#destroy'
+  
+  get 'mypage' => 'users#mypage'
+  resources :posts
+  root to: 'homes#top'
 end

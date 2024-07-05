@@ -1,0 +1,4 @@
+<h1>退会</h1>
+<p>退会する方は下のボタンをクリック</p>
+
+<%= link_to '退会',destroy_user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか?" %>
