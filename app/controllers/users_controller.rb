@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     user.id = current_user.id
     user.destroy
     flash[:notice] = "アカウントを削除しました"
-    redirect_to new_user_registration_path
+    redirect_to root_path
   end
   
   private
