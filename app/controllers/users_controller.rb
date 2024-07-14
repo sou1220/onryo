@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :is_matching_login_user, only: [:edit, :update, :destroy]
+  before_action :is_matching_login_user, only: [:update, :destroy, :edit, :show]
   
   def mypage
     @posts = Post.all
@@ -7,9 +7,13 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    unless @user.id == current_user.id
+      redirect_to mypage_path
+    end
   end
 
   def show
+    @user = current_user
   end
 
   def update
@@ -28,7 +32,7 @@ class UsersController < ApplicationController
     user.id = current_user.id
     user.destroy
     flash[:notice] = "アカウントを削除しました"
-    redirect_to root_path
+    redirect_to new_user_registration_path
   end
   
   private

@@ -20,7 +20,7 @@
               <%= link_to 'ユーザー編集', edit_user_path(current_user.id)%>
             </li>
             <li class = "nav-item pr-3 justify-content-end ">
-              <%= link_to '投稿', new_post_path %>
+              <%= link_to '新規投稿', new_post_path %>
             </li>
             <li class = "nav-item pr-3 ">
               <%= link_to 'マイページ', mypage_path  %>
@@ -28,8 +28,11 @@
             <li class = "nav-item pr-3 justify-content-end">
               <%= link_to "投稿一覧", posts_path %>
             </li>
+            <li class = "nav-item pr-3 justify-content-end">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            </li>
             <li class = "nav-item justify-content-end">
-              <%= link_to "ログアウト", destroy_user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか?" %>
+              <%= link_to "退会", destroy_user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか?" %>
             </li>
           </ul>
           <% else %>

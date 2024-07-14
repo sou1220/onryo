@@ -15,9 +15,9 @@
         <%= f.text_field :title %>
         <h4>説明</h4>
         <%= f.text_area :body %>
-        <%= f.submit '更新' %>
+        <%= f.submit '更新', class: "btn btn-primary" %>
       <% end %>
-      <%= link_to '投稿一覧', posts_path %>
+      <%= link_to '削除', post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか?" %>
     </div>
   </div>
 </div>
