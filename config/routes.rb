@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'mypage' => 'users#mypage'
   resources :posts
   root to: 'homes#top'
+  get "/search" => "searches#search"
 end
