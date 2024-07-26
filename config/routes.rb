@@ -5,7 +5,10 @@ Rails.application.routes.draw do
    delete 'users/:id/destroy', to: 'users#destroy'
   
   get 'mypage' => 'users#mypage'
-  resources :posts
+  resources :posts do
+      resources :comments, only: [:create, :destroy]
+  end
+    
   root to: 'homes#top'
   get "/search" => "searches#search"
 end
