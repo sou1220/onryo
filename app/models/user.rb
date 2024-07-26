@@ -10,6 +10,15 @@ class User < ApplicationRecord
          validates :name, presence: true
          validates :password_confirmation, presence: true
          
+         GUEST_USER_EMAIL = "guest@example.com"
+         
+         def self.guest
+           find_or_create_by!(email: GUEST_USER_EMAIL) do |user|
+             user.password = SecureRandom.urlsage_base64
+             user.name = "guestuser"
+           end
+         end
+         
           def self.looks(search, word)
             if search == "perfect"
               @user = User.where("name LIKE?", "#{word}")
