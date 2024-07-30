@@ -1,2 +1,20 @@
 @use '~bootstrap/scss/bootstrap';
 
+header{
+    width: 100%;
+}
+
+
+.link
+{
+   color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.rogo  .top-text{
+    font-family:"Yu Mincho";
+}
+
+.main-container{
+    margin:0;
+    padding:0;
+}
