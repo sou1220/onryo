@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
   
+  
   def get_image
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

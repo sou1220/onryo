@@ -2,6 +2,14 @@
   <div class="row">
     <div class="col">
       <% flash[:notice] %>
+      <% if @comment.errors.any? %>
+        <%= @comment.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @comment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
       <div>
       <%= image_tag @post.get_image %>
         <p>施設名:<%= @post.title %></p>
