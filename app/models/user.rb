@@ -18,7 +18,7 @@ class User < ApplicationRecord
         end
          
          def guest_user?
-           email == "guest@example.com"
+           email == GUEST_USER_EMAIL
          end
          
           def self.looks(search, word)
