@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Admin - onryo</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+  <head>
+    <title>Admin - onryo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 <body>
-  <% if admin_signed_in? %>
-  <nav class="navbar navbar-dark" style="background-color: #f5fffa">
-
-      <ul class="navbar-nav">
+  <header>
+    <% if admin_signed_in? %>
+    <nav class="adminbar navbar navbar-dark" style="background-color:#F4A261">
+      <ul class="navbar-nav pt-px">
         <li class="nav-item">
-         
-         <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "admin-link" %>
+         <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
         </li>
       </ul>
-
-  </div>
-</nav>
+    </nav>
+  </header>
   <% end %>
   <%= yield %>
 </body>
