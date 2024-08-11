@@ -20,16 +20,22 @@
     <% @users.each do |user| %> 
       <tr>
         <td>
-          <%= image_tag user.post.first.get_image %></br>
+          <% if user.posts.any? %>
+          <%= image_tag user.posts.first.get_image %></br>
+          <% end %>
         </td>
         <td>
           <%= user.name %>
         </td>
         <td>
-          <%= user.post.first.title %>
+          <% if user.posts.any? %>
+          <%= user.posts.first.title %>
+          <% end %>
         </td>
         <td>
-          <%= user.post.first.body %>
+          <% if user.posts.any? %>
+          <%= user.posts.first.body %>
+          <% end %>
         </td>
       </tr>
     <% end %>
