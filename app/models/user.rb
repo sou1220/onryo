@@ -7,6 +7,7 @@ class User < ApplicationRecord
          
          validates :email, presence: true
          validates :name, presence: true
+
          
          GUEST_USER_EMAIL = "guest@example.com"
          
@@ -20,6 +21,7 @@ class User < ApplicationRecord
          def guest_user?
            email == GUEST_USER_EMAIL
          end
+
          
           def self.looks(search, word)
             if search == "perfect"
