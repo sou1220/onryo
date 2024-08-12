@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin - onryo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<body>
+  <header>
+    <% if admin_signed_in? %>
+    <nav class="adminbar navbar navbar-dark" style="background-color:#F4A261">
+      <ul class="navbar-nav pt-px">
+        <li class="nav-item">
+         <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <% end %>
+  <%= yield %>
+</body>
+</html>
