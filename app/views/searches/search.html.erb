@@ -16,27 +16,28 @@
        </th>
      </tr>
     </thead>
+    
+    <% @users.each do |user| %>
   <tbody>
-  <% @users.each do |user| %>
-    <tr>
-      <td>
-        <% if user.posts.any? %>
-          <%= image_tag user.posts.first.image %><br>
-        <% end %>
-      </td>
-      <td>
-        <%= user.name %>
-      </td>
-        <% user.posts.each do |post| %>
+  
+    <% if user.posts.any? %>
+        <tr>
           <td>
-            <%= post.title %>
+            <%= image_tag user.posts.first.image %>
           </td>
           <td>
-            <%= post.body %>
+            <%= user.name %>
           </td>
+          <td>
+            <%= user.posts.first.title %>
+          </td>
+          <td>
+            <%= user.posts.first.body %>
+          </td>
+        </tr>
         <% end %>
-      </tr>
-    <% end %>
+      <% end %>
+
     </tbody>
   </table>
 <% elsif @model == "Post" %>
