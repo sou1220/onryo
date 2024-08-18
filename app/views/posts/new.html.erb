@@ -17,7 +17,23 @@
         <h4>施設名</h4>
         <%= f.text_field :title %>
         <h4>コメント</h4>
-        <%= f.text_area :body %>
+        <%= f.text_area :body %></br>
+                <!--レビュー-->
+         <div id="post_raty"></div>
+        <script>
+          (function() {
+            $('#post_raty').empty();
+            let elem = document.querySelector('#post_raty');
+            let opt = {  
+              size: 36,
+              starOn: "<%= asset_path('star-on.png') %>",
+              starOff: "<%= asset_path('star-off.png') %>",
+              half: false, 
+              scoreName: 'post[star]',
+            };
+            raty(elem, opt);
+          })(); 
+        </script>
         <%= f.submit '投稿' , class: "btn btn-primary" %>
       <% end %>
     </div>

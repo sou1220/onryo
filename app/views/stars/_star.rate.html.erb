@@ -1,0 +1,17 @@
+<div id = "post_raty_<%= object.id %>"></div>
+  <script>
+    $('#post_raty_<%= object.id %>').empty();
+    (function() {
+      let elem = document.querySelector('#post_raty_<%= object.id %>');
+      let opt = {  
+        size: 36,
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+        half: false, 
+        scoreName: 'post[star]',
+        readOnly: true,
+        score: "<%= object.star %>",
+      };
+      raty(elem, opt);
+    })();
+  </script>
