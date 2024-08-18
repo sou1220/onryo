@@ -15,6 +15,22 @@
         <%= f.text_field :title %>
         <h4>説明</h4>
         <%= f.text_area :body %>
+        <div id = "post_raty_<%= @post.id %>"></div>
+          <script>
+            $('#post_raty_<%= @post.id %>').empty();
+            (function() {
+              let elem = document.querySelector('#post_raty_<%= @post.id %>');
+              let opt = {  
+                size: 36,
+                starOn: "<%= asset_path('star-on.png') %>",
+                starOff: "<%= asset_path('star-off.png') %>",
+                half: false, 
+                scoreName: 'post[star]',
+                score: "<%= @post.star %>",
+              };
+              raty(elem, opt);
+            })();
+          </script>
         <%= f.submit '更新', class: "btn btn-primary" %>
       <% end %>
       <%= link_to '削除', post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか?" %>
