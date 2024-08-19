@@ -1,15 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col">
-    <h1>全ユーザー一覧</h1>
-    <ul>
-      <% @users.each do |user| %>
-        <li>
-          <%= user.name %> - <%= user.email %>
-          <%= link_to '削除', admin_user_path(user), method: :delete, data: { confirm: "本当に削除しますか?" } %>
-        </li>
-      <% end %>
-    </ul>
+      <%= flash[:notice] %>
+      <h1>全ユーザー一覧</h1>
+        <ul>
+          <% @users.each do |user| %>
+            <li class = "p-3">
+              <%= user.name %> - <%= user.email %>
+              <%= link_to '削除', admin_user_path(user), method: :delete, data: { confirm: "ユーザーを削除しますか?" }, class: "btn btn-danger" %>
+              <% if user.posts.exists? %>
+              <% user.posts.each do |post| %>
+                <div class="card" style="width: 50%;">
+                  <%= image_tag post.get_image, class: "card-img-top" %>
+                    <div class="card-body">
+                      <h5 class = "card-title">施設名:<%= post.title %></h5>
+                        <p  class = "card-text" >コメント:<%= post.body %></p>
+                      <%= render "stars/star.rate", object: post %>
+                    </div>
+                  </div>
+                <% end %>
+              <% else %>
+              投稿なし
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
