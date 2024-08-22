@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     comment.post_id = post.id
     flash[:notice] = "コメントを作成しました"
     comment.save
-      redirect_to post_path(post)
+    redirect_to post_path(post)
   end
   
   def destroy
