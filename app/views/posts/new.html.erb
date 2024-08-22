@@ -18,7 +18,14 @@
         <%= f.text_field :title %>
         <h4>コメント</h4>
         <%= f.text_area :body %></br>
-                <!--レビュー-->
+        
+        <!--タグ-->
+        <div class = "form-group">
+          <label>タグ</label></br>
+          <%= f.text_field :tag, placeholder: "温泉、旅館等"  %>
+        </div>
+        
+        <!--レビュー-->
          <div id="post_raty"></div>
         <script>
           (function() {

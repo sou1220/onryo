@@ -8,6 +8,7 @@
             <div class="card-body">
               <h5 class = "card-title">施設名:<%= post.title %></h5>
               <p  class = "card-text" >コメント:<%= post.body %></p>
+              <p>タグ:<%= link_to post.tag, tag_search_path(word: post.tag) %></p>
               <%= render "stars/star.rate", object: post %>
             <%= link_to '詳細', post_path(post.id) %>
           </div>

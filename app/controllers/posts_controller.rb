@@ -48,10 +48,11 @@ class PostsController < ApplicationController
     redirect_to mypage_path
   end
   
+  
   private
   
   def post_params
-    params.require(:post).permit(:image, :title, :body, :star)
+    params.require(:post).permit(:image, :title, :body, :star, :tag)
   end
   
   def is_matching_login_user
