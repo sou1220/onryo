@@ -11,7 +11,7 @@
         </ul>
       <% end %>
       <div>
-      <%= image_tag @post.get_image %>
+      <%= image_tag @post.get_image, class: "profile_image" %>
         <p>施設名:<%= @post.title %></p>
         <p>コメント:<%= @post.body %></p>
         <p>投稿者:<%= link_to @post.user.name, user_path(@post.user.id) %></p>

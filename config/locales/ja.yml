@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+      post:
+        title: "施設名"
+        body: "コメント"
+        tag: "タグ"
+  errors:
+    models:
+      user:
+        attributes:
+          name:
+            blank: "名前を入力してください"
+          email:
+            blank: "Eメールを入力してください"
+          password:
+            blank: "パスワードを入力してください"
+            too_short: "パスワードは%{count}文字以上で入力してください"
+          password_confirmation:
+            confirmation: "パスワードとパスワード（確認用）が一致しません"
+      post:
+        attributes:
+          title:
+            blank: "施設名を入力してください"
+          body:
+            blank: "コメントを入力してください"
+          tag:
+            blank: "タグを入力してください"
+    messages:
+      blank: "を入力してください"
+      confirmation: "が一致しません"

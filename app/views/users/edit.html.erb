@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>編集フォーム</h2>
+      <h1 class = "pt-5">編集フォーム</h1>
       <% if @user.errors.any? %>
         <%= @user.errors.count %>件のエラーが発生しました
         <ul>
@@ -33,7 +33,7 @@
         <div class="actions">
           <%= f.submit "更新", class: "btn btn-primary" %>
         </div>
-        <%= link_to "退会", destroy_user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか?" %>
+        <%= link_to "退会", destroy_user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか?", class: "btn btn-danger" %>
       <% end %>
     </div>
   </div>

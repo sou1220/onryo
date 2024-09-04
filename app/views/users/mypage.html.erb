@@ -4,10 +4,10 @@
       <h1><%= @user.name %>さんのマイページ</h1>
       <% @posts.each do |post| %>
         <% if post.user_id == current_user.id %>
-          <%= image_tag post.get_image %></br>
-          <p>施設名:<%= post.title %></p>
-          <p>コメント:<%= post.body %></p>
-          <p>投稿日:<%= post.created_at.strftime('%Y/%m/%d') %></p>
+          <div class = "pt-3"><%= image_tag post.get_image %></div></br>
+          <p><span class = "h5">施設名:</span><%= post.title %></p>
+          <p><span class = "h5">コメント:</span><%= post.body %></p>
+          <p class = "pb-5">投稿日:<%= post.created_at.strftime('%Y/%m/%d') %></p>
           <% unless @user.guest_user? %>
             <%= link_to 'ユーザー編集', edit_user_path(current_user.id) %>
           <% end %>
