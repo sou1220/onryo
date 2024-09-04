@@ -7,7 +7,9 @@ class User < ApplicationRecord
          
          validates :email, presence: true
          validates :name, presence: true
-
+         validates :password,presence: true, length: { minimum: 6 }, if: -> { password.present? }
+         validates :password_confirmation,presence: true, length: { minimum: 6 }, if: -> { password_confirmation.present? }
+       
          
          GUEST_USER_EMAIL = "guest@example.com"
          
