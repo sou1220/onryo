@@ -16,6 +16,7 @@
         <h2 class = "pt-3">説明</h2>
         <%= f.text_area :body %>
         <div id = "post_raty_<%= @post.id %>"></div>
+          <!--レビュー機能-->
           <script>
             $('#post_raty_<%= @post.id %>').empty();
             (function() {

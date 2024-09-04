@@ -15,6 +15,7 @@ class Post < ApplicationRecord
     image
   end
   
+  # 投稿検索機能
   def self.looks(search, word)
     if search == "perfect"
       @post = Post.where("title LIKE?", "#{word}")
