@@ -11,7 +11,7 @@ class User < ApplicationRecord
          validates :password_confirmation,presence: true, length: { minimum: 6 }, if: -> { password_confirmation.present? }
        
          
-         GUEST_USER_EMAIL = "guest@example.com"
+        GUEST_USER_EMAIL = "guest@example.com"
          
         def self.guest
           find_or_create_by!(email: GUEST_USER_EMAIL) do |user|
@@ -20,11 +20,11 @@ class User < ApplicationRecord
           end
         end
          
-         def guest_user?
-           email == GUEST_USER_EMAIL
-         end
-  
-         
+        def guest_user?
+          email == GUEST_USER_EMAIL
+        end
+        
+        # 投稿検索機能
         def self.looks(search, word)
           if search == "perfect"
             @user = User.where("name LIKE?", "#{word}")

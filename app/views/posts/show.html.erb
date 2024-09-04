@@ -25,6 +25,7 @@
       <% end %>
       </div>
       <div>
+        <!--コメント機能-->
         <% @post.comments.each do |comment| %>
           <div class="my-2">
             <%= "名前:" + comment.user.name %></br>
