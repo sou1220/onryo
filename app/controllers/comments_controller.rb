@@ -5,14 +5,14 @@ class CommentsController < ApplicationController
     comment = current_user.comments.new(comment_params)
     comment.post_id = post.id
     if comment.save
-    flash[:notice] = "コメントを作成しました" 
+      flash[:notice] = "コメントを作成しました" 
     end
     redirect_to post_path(post)
   end
   
   def destroy
     Comment.find(params[:id]).destroy
-    flash[:notice] = "コメントを削除しました"
+    flash[:error] = "コメントを削除しました"
     redirect_to post_path(params[:post_id])
   end
   
