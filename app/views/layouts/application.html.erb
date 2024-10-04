@@ -45,9 +45,12 @@
                     <li class = "nav-item">
                       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link mr-5" %>
                     </li>
-                    <li class = "nav-item">
-                      <%= link_to "退会", destroy_user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか?", class: "link mr-5 fa-solid fa-right-from-bracket" %>
+                    <li class="nav-item">
+                      <%= link_to destroy_user_path(current_user.id), method: :delete, "data-confirm" => "本当に退会しますか?", class: "text-danger mr-5" do %>
+                        <i class="fa-solid fa-right-from-bracket"></i> 退会
+                      <% end %>
                     </li>
+
                   </ul>
                   <% else %>
                     <ul class = "navbar-nav ">
