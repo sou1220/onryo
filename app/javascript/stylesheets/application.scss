@@ -26,3 +26,16 @@ body {
 .padding-top100 {
     padding-top:100px;
 }
+
+
+.flash-message.notice {
+    color: green;
+}
+
+.flash-message.error {
+    color: red;
+}
+.flash-message.alert {
+    color: red;
+}
+

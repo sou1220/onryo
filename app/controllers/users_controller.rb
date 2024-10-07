@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to mypage_path
     else
-      flash[:alert] = "更新に失敗しました"
+      flash[:error] = "更新に失敗しました"
       render :edit
     end
   end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.id = current_user.id
     user.destroy
-    flash[:notice] = "アカウントを削除しました"
+    flash[:error] = "アカウントを削除しました"
     redirect_to new_user_registration_path
   end
   
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   def ensure_guest_user
     user = User.find(params[:id])
     if user.guest_user?
-      redirect_to user_path(current_user), notice: "ゲストユーザーはプロフィール編集画面へ推移できません"
+      redirect_to user_path(current_user), error: "ゲストユーザーはプロフィール編集画面へ推移できません"
     end
   end
 end
