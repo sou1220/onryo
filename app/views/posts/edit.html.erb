@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm px-5">
+    <div class="col">
       <h1 class = "pt-5">編集フォーム</h1>
       <% if @post.errors.any? %>
         <%= @post.errors.count %>件のエラーが発生しました
@@ -11,6 +11,8 @@
         </ul>
       <% end %>
       <%= form_with model: @post do |f| %>
+        <%= image_tag @post.get_image %></br>
+        <%= f.file_field :image  %>
         <h2 class = "pt-3 pb-1">施設名</h2>
         <%= f.text_field :title %>
         <h2 class = "pt-3">説明</h2>

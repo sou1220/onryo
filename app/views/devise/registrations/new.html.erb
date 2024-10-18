@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>サインイン</h2>
+      <h2>サインアップ</h2>
       
       <%= form_with model: @user, url: user_registration_path do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
@@ -30,7 +30,7 @@
         </div>
       
         <div class="actions">
-          <%= f.submit "サインイン", class: "btn btn-primary" %>
+          <%= f.submit "サインアップ", class: "btn btn-primary" %>
         </div>
       <% end %>
       
