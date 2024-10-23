@@ -13,7 +13,7 @@
       <div>
       <%= image_tag @post.get_image, class: "profile_image" %>
         <p>施設名:<%= @post.title %></p>
-        <p>コメント:<%= simple_format(@post.body) %></p>
+        <p>コメント:<%= @post.body %></p>
         <p>投稿者:<%= link_to @post.user.name, user_path(@post.user.id) %></p>
         <p>タグ:<%= link_to @post.tag, tag_search_path(word: @post.tag) %></p>
         <p>投稿日:<%= @post.created_at.strftime('%Y/%m/%d') %></p>
