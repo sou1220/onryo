@@ -7,6 +7,13 @@ ja:
         title: "施設名"
         body: "コメント"
         tag: "タグ"
+  views:
+      pagination:
+        first: "最初"
+        last: "最後"
+        previous: "前"
+        next: "次"
+        truncate: "..."
   errors:
     models:
       user:
