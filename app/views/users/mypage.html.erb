@@ -8,6 +8,7 @@
           <p><span class = "h5">施設名:</span><%= post.title %></p>
           <p><span class = "h5">コメント:</span><%= post.body %></p>
           <p>投稿日:<%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+          <p>♥<%=post.favorites.count %></p>
             <% unless @user.guest_user? %>
             <%= link_to 'ユーザー編集', edit_user_path(current_user.id) %>
           <% end %>
